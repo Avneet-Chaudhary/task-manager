@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} Tasks {% endblock title %}
+{% block body %}
+<div class="container my-5">
+    <h1>Your ToDo's</h1>
+    <!-- Box to display matching tasks -->
+    <div class="row">
+        {% if allTodo|length == 0 %}
+        <div class="col-md-12">
+            <div class="alert alert-dark" role="alert">
+                No Todo's found, <a href="/" class="btn btn-primary">Add Tasks</a>
+            </div>
+        </div>
+        {% else %}
+        {% for todo in allTodo %}
+        <div class="col-md-4">
+            <div class="card my-2 {% if todo.completed %}completed-task{% endif %}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ todo.title }}</h5>
+                    <p class="card-text">{{ todo.desc }}</p>
+                    <p class="card-text">{{ todo.date_created }}</p>
+                    <p class="card-text">Priority: {% if todo.priority == 1 %}Low{% elif todo.priority == 2 %}Medium{%
+                        elif todo.priority == 3 %}High{% endif %}</p>
+                    {% if todo.completed %}
+                    <span class="badge bg-success">Completed</span>
+                    <a href="/pending/{{ todo.sno }}" class="btn btn-outline-warning btn-sm mx-1">Revert</a>
+                    {% else %}
+                    <span class="badge bg-warning text-dark">Pending</span>
+                    <a href="/update/{{ todo.sno }}" class="btn btn-outline-primary btn-sm mx-1">Update</a>
+                    {% endif %}
+                    <form method="POST" action="/delete/{{ todo.sno }}" class="d-inline">
+                        <input type="submit" class="btn btn-outline-danger btn-sm mx-1" value="Delete">
+                    </form>
+                    <a href="/comment/{{ todo.sno }}" class="btn btn-outline-secondary btn-sm mx-1">Add Comment</a>
+                    <!-- Display comments for the task -->
+                    {% for comment in todo.comments %}
+                    <div class="card my-2">
+                        <div class="card-body">
+                            <p class="card-text">{{ comment.content }}</p>
+                            <p class="card-text">{{ comment.date_created }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}
+
+<style>
+    .completed-task .card-body {
+        text-decoration: line-through;
+    }
+</style>

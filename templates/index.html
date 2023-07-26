@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+<div class="container my-3">
+    <h2>Add a Todo</h2>
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Todo Title</label>
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Todo Description</label>
+            <input type="text" class="form-control" name="desc" id="desc" required>
+        </div>
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <select class="form-select" name="priority" id="priority" required>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+</div>
+<div class="container my-5">
+    <!-- Search form and "Your ToDo's" title aligned to the right -->
+    <div class="d-flex justify-content-between mb-3">
+        <h1>Your ToDo's</h1>
+        <form action="/search" method="GET" class="d-flex">
+            <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Table of todos -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">SNo</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Time</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if allTodo|length == 0 %}
+            <tr>
+                <td colspan="6">
+                    <div class="alert alert-dark" role="alert">
+                        No Todo's found, Add your first Todo!
+                    </div>
+                </td>
+            </tr>
+            {% else %}
+            {% for todo in allTodo %}
+            <tr {% if todo.completed %}class="completed-task" {% endif %}>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.desc }}</td>
+                <td>{{ todo.date_created }}</td>
+                <td>
+                    {% if todo.priority == 1 %}
+                    Low
+                    {% elif todo.priority == 2 %}
+                    Medium
+                    {% elif todo.priority == 3 %}
+                    High
+                    {% endif %}
+                </td>
+                <td>
+                    <form action="{{ url_for('delete', sno=todo.sno) }}" method="post"
+                        onsubmit="return confirm('Are you sure you want to delete this task?')">
+                        <a href="/update/{{ todo.sno }}" type="button"
+                            class="btn btn-outline-primary btn-sm mx-1">Update</a>
+                        <a href="/done/{{ todo.sno }}" type="button" class="btn btn-outline-success btn-sm mx-1"
+                            data-bs-toggle="tooltip" title="Mark as Done">Done</a>
+                        <button type="submit" class="btn btn-outline-danger btn-sm mx-1">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+
+    <!-- Go Back button - Display only if a search is performed -->
+    {% set is_search_performed = request.args.get('search') %}
+    {% if is_search_performed %}
+    <div class="text-center">
+        <a href="/" class="btn btn-secondary">Go Back</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock body %}

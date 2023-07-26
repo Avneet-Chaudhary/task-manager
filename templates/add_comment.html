@@ -1,0 +1,17 @@
+<!-- add_comment.html -->
+
+{% extends 'base.html' %}
+{% block title %} Add Comment {% endblock title %}
+{% block body %}
+<div class="container my-5">
+    <h1>Add Comment for "{{ todo.title }}"</h1>
+    <form action="" method="POST">
+        <div class="mb-3">
+            <label for="content" class="form-label">Comment</label>
+            <textarea class="form-control" name="content" id="content" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+        <a href="{{ url_for('tasks') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock body %}
