@@ -11,6 +11,7 @@ The Task Manager is a simple web application that allows users to manage their t
 - Delete tasks from the task list.
 - Add comments to tasks for additional information.
 - prioritize your task
+  
 ## Technologies Used
 
 - Python
