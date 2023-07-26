@@ -1,0 +1,13 @@
+config.ini
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment-specific files
+.env
+
+# Ignore sensitive or private information (e.g., config.ini)
+# config.ini
+
+# Ignore log files
+*.log
