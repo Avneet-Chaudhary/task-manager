@@ -202,7 +202,7 @@ def send_task_reminders():
         ).all()
 
         # Replace this with the default email address
-        default_email = 'avneetchaudhary8273@gmail.com'
+        default_email = 'yourgmailid@gmail.com'
 
         for task in tasks_to_remind:
             # Send an email notification to remind about the task.
