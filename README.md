@@ -33,13 +33,19 @@ The Task Manager is a simple web application that allows users to manage their t
 
 ## Screenshots
 
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/7a1ce67d-295c-4518-98e9-abfce4357b90)
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/6632ee8b-c0d1-45ff-ba58-498e7cefcb31)
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/e2100efb-92f4-43a5-8657-f493587eacc4)
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/9ffebbc6-f034-4fec-a5f6-b3e0ddabfa6f)
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/c30c25ca-de30-4445-b302-a69bf193e674)
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/a9b02b10-7843-4dcd-9463-802d2a41be8a)
-![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/4d020419-5b07-4bab-bb6e-8283aa86efaa)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/4f71989d-a8da-44f0-a581-2afd282c2e72)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/d4c26935-f0cc-4896-b71b-c6127f8e4b41)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/eb6fcbd9-c653-4a87-bd26-1d5dec3451f5)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/4726b380-38e4-4685-b5ba-9816013b2d8b)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/7b58b0e0-f62c-4550-b419-ba2ce0f14887)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/69884d55-e12e-40cc-aa3f-5a1590d9e225)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/b5c81051-0d49-4811-aa97-38fdfbad4f79)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/827cbfd0-3b9b-460a-9316-20b9d56d0665)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/6ae30a97-95ae-40db-90b2-ea9265fad3c7)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/73dd3756-26fa-45ee-bc5d-81a234db7764)
+![image](https://github.com/Avneet-Chaudhary/task-manager/assets/93037547/1d8ff6e5-cc47-4c7d-a6cd-8874894aa065)
+
+
 
 
 ## Contribution
