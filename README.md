@@ -7,7 +7,7 @@ The Task Manager is a simple web application that allows users to manage their t
 
 - Add new tasks with titles, descriptions and priority.
 - Update task details such as title and description.
-- Mark tasks as completed or pending.
+- Mark tasks as completed or pending or revert it to pending after mark as done.
 - Delete tasks from the task list.
 - Add comments to tasks for additional information.
 - prioritize your task
